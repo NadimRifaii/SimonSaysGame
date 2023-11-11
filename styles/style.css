@@ -6,7 +6,7 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin: 5%;
   color: #FEF2BF;
 }
 
@@ -47,7 +47,11 @@ body {
   background-color: yellow;
 }
 
-.pressed {
+.btn {
+  cursor: pointer;
+}
+
+.btn.pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }

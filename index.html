@@ -7,19 +7,21 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <!-- css files -->
-  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
+  <audio id="wrong-sound" src="./sounds/wrong.mp3"></audio>
   <h1 id="level-title">Press Any Key to Start</h1>
   <div class="container">
     <div lass="row">
 
       <div type="button" id="green" class="btn green">
-
+        <audio id="green-sound" src="./sounds/green.mp3"></audio>
       </div>
 
       <div type="button" id="red" class="btn red">
+        <audio id="red-sound" src="./sounds/red.mp3"></audio>
 
       </div>
     </div>
@@ -27,9 +29,11 @@
     <div class="row">
 
       <div type="button" id="yellow" class="btn yellow">
+        <audio id="yellow-sound" src="./sounds/yellow.mp3"></audio>
 
       </div>
       <div type="button" id="blue" class="btn blue">
+        <audio id="blue-sound" src="./sounds/blue.mp3"></audio>
 
       </div>
 
@@ -38,7 +42,7 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="game.js" charset="utf-8"></script>
+  <script src="./scripts/game.js" charset="utf-8"></script>
 
 </body>
 
