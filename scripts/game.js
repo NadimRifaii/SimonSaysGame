@@ -31,15 +31,15 @@ function playSound(id) {
 }
 let clickHandler = (event) => {
   playSound(event.target.classList[1])
-  addGrayScale(event.target)
+  toggleClass(event.target, 'pressed')
   if (event.isTrusted && userCanClick) {
     playerPress(event.target.classList[1], currentIndex)
   }
 }
-function addPressedClass(button) {
-  button.classList.add('pressed');
+function toggleClass(element, clas) {
+  element.classList.add(clas);
   setTimeout(() => {
-    button.classList.remove('pressed')
+    element.classList.remove(clas)
   }, 200)
 }
 function simonPress(level) {
@@ -64,6 +64,7 @@ function playerPress(buttonColor) {
   }
   else if (currentIndex == orderArray.length || orderArray[currentIndex] != buttonColor) {
     stopGame()
+    toggleClass(document.body, 'game-over')
     return
   }
   currentIndex++
@@ -72,6 +73,7 @@ function stopGame() {
   currentIndex = 0
   level = 1
   levelTitle.innerText = 'Game over , press any key to restart'
+
   playSound('wrong')
 }
 function nextLevel() {
