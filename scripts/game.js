@@ -31,12 +31,12 @@ function playSound(id) {
 }
 let clickHandler = (event) => {
   playSound(event.target.classList[1])
-  addGrayScale(event.target)
+  addPressedClass(event.target)
   if (event.isTrusted && userCanClick) {
     playerPress(event.target.classList[1], currentIndex)
   }
 }
-function addGrayScale(button) {
+function addPressedClass(button) {
   button.classList.add('pressed');
   setTimeout(() => {
     button.classList.remove('pressed')
