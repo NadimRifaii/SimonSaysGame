@@ -25,3 +25,14 @@ function addEventListenersToButtons() {
     button.addEventListener('click', clickHandler)
   })
 }
+function playSound(id) {
+  const audio = document.querySelector(`#${id}-sound`)
+  audio.play()
+}
+let clickHandler = (event) => {
+  playSound(event.target.classList[1])
+  addGrayScale(event.target)
+  if (event.isTrusted && userCanClick) {
+    playerPress(event.target.classList[1], currentIndex)
+  }
+}
