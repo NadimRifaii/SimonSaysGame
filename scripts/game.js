@@ -42,3 +42,29 @@ function addPressedClass(button) {
     button.classList.remove('pressed')
   }, 200)
 }
+function simonPress(level) {
+  userCanClick = false;
+  orderArray = []
+  for (let i = 0; i < level; i++) {
+    const randomIndex = getRandomIndex()
+    setTimeout(() => {
+      buttons[randomIndex].click()
+    }, 1000 * i)
+    orderArray.push(buttons[randomIndex].classList[1])
+  }
+  setTimeout(() => {
+    userCanClick = true;
+  }, 1000 * level);
+  console.log(orderArray)
+}
+function playerPress(buttonColor) {
+  if (currentIndex == orderArray.length - 1 && orderArray[currentIndex] == buttonColor) {
+    nextLevel()
+    return
+  }
+  else if (currentIndex == orderArray.length || orderArray[currentIndex] != buttonColor) {
+    stopGame()
+    return
+  }
+  currentIndex++
+}
