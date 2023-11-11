@@ -36,3 +36,9 @@ let clickHandler = (event) => {
     playerPress(event.target.classList[1], currentIndex)
   }
 }
+function addPressedClass(button) {
+  button.classList.add('pressed');
+  setTimeout(() => {
+    button.classList.remove('pressed')
+  }, 200)
+}
