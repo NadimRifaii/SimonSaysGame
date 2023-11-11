@@ -20,3 +20,8 @@ function addEventListenersToDocument() {
     }
   })
 }
+function addEventListenersToButtons() {
+  buttons.forEach(button => {
+    button.addEventListener('click', clickHandler)
+  })
+}
