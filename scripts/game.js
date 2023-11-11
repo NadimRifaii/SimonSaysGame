@@ -68,3 +68,16 @@ function playerPress(buttonColor) {
   }
   currentIndex++
 }
+function stopGame() {
+  currentIndex = 0
+  level = 1
+  levelTitle.innerText = 'Game over , press any key to restart'
+  playSound('wrong')
+}
+function nextLevel() {
+  currentIndex = 0
+  level = changeLevel(level)
+  setTimeout(() => {
+    simonPress(level - 1)
+  }, 2000)
+}
