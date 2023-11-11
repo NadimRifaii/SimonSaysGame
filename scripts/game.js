@@ -91,3 +91,5 @@ function changeLevel(level) {
   level++
   return level
 }
+addEventListenersToDocument()
+addEventListenersToButtons()
