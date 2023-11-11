@@ -81,3 +81,13 @@ function nextLevel() {
     simonPress(level - 1)
   }, 2000)
 }
+function getRandomIndex() {
+  return Math.floor(Math.random() * 3)
+}
+
+
+function changeLevel(level) {
+  levelTitle.innerText = `level ${level}`
+  level++
+  return level
+}
