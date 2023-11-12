@@ -1,10 +1,12 @@
 const levelTitle = document.querySelector('#level-title')
 const buttons = document.querySelectorAll('.btn')
+const overlay = document.querySelector('.overlay')
 let mouseEventsDisabled = true
 let orderArray = []
 let level = 1
 let currentIndex = 0
 let userCanClick = false;
+
 function addEventListenersToDocument() {
   document.addEventListener('mousedown', (event) => {
     if (mouseEventsDisabled) {
@@ -54,11 +56,13 @@ function simonPress(level) {
   }
   setTimeout(() => {
     userCanClick = true;
+    overlay.classList.remove('active')
   }, 1000 * level);
   console.log(orderArray)
 }
 function playerPress(buttonColor) {
   if (currentIndex == orderArray.length - 1 && orderArray[currentIndex] == buttonColor) {
+    overlay.classList.add('active')
     nextLevel()
     return
   }
@@ -73,7 +77,6 @@ function stopGame() {
   currentIndex = 0
   level = 1
   levelTitle.innerText = 'Game over , press any key to restart'
-
   playSound('wrong')
 }
 function nextLevel() {
