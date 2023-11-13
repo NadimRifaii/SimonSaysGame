@@ -67,6 +67,7 @@ function playerPress(buttonColor) {
     return
   }
   else if (currentIndex == orderArray.length || orderArray[currentIndex] != buttonColor) {
+    overlay.classList.add('active')
     stopGame()
     toggleClass(document.body, 'game-over')
     return
